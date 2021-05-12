@@ -1,3 +1,18 @@
+
+
+
+# In order to start using Dash, we have to install several packages.
+
+
+'''
+pip install dash==0.21.1  
+pip install dash-renderer==0.13.0  
+pip install dash-html-components==0.11.0
+pip install dash-core-components==0.23.0  
+pip install plotly --upgrade
+'''
+
+
 import pandas as pd
 import dash
 import dash_html_components as html
@@ -9,7 +24,7 @@ import plotly.express as px
 app = dash.Dash(__name__)
 
 
-df = pd.read_csv('/home/manuel/Desktop/Manuel_project/SQL project/SQL2Dashboard/Covid-19/tutorial/stockdata2.csv'
+df = pd.read_csv('/Users/monkiky/Desktop/SQL2Dashboard/Covid-19/tutorial/stockdata2.csv'
                  , index_col=0, parse_dates=True)
 df.index = pd.to_datetime(df['Date'])
 
