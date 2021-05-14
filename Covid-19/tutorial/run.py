@@ -1,7 +1,9 @@
+# The script that take the data from the database and create the dashboard is called run.py
+# For explanation I have created an adapted scrict for jupyter that shows same output here
+
+
 
 # In order to start using Dash, we have to install several packages.
-
-
 '''
 pip install dash==0.21.1  
 pip install dash-renderer==0.13.0  
@@ -18,122 +20,118 @@ import dash_core_components as dcc
 import plotly.express as px
 import sqlite3
 
-# Get data from database
 
-cnx = sqlite3.connect('/Users/monkiky/Desktop/SQL2Dashboard/Covid-19/COVID_19.db')
+#### GETTING DATA FROM DATABASE ####
 
+# I import here all tables in pandas objects I am going to use 
+
+cnx = sqlite3.connect('./COVID_19.db') # The database
+
+
+# The tables of the databases
 People_vaccinated = pd.read_sql_query("SELECT * FROM People_vaccinated", cnx)
-People_vaccinated_fig = px.line(People_vaccinated, x="date", y="newPeopleVaccinatedFirstDoseByPublishDate", title='Life expectancy in Canada')
-theme = {
-    "accent":"#fa4f56",
-    "accent_negative":"#ff2c6d",
-    "accent_positive":"#33ffe6",
-    "background_content":"#F9F9F9",
-    "background_page":"#F2F2F2",
-    "body_text":"#606060",
-    "border":"#e2e2e2",
-    "breakpoint_font":"1200px",
-    "breakpoint_stack_blocks":"700px",
-    "card_border":{
-        "width":"0px 0px 0px 0px",
-        "style":"solid",
-        "color":"#e2e2e2",
-        "radius":"0px"
-    },
-    "card_background_color":"#F9F9F9",
-    "card_box_shadow":"0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24)",
-    "card_margin":"15px",
-    "card_padding":"5px",
-    "card_outline":{
-        "width":"0px",
-        "style":"solid",
-        "color":"#e2e2e2"
-    },
-    "card_header_border":{
-        "width":"0px 0px 1px 0px",
-        "style":"solid",
-        "color":"#e2e2e2",
-        "radius":"0px"
-    },
-    "card_header_background_color":"#F9F9F9",
-    "card_header_box_shadow":"0px 0px 0px rgba(0,0,0,0)",
-    "card_header_margin":"0px",
-    "card_header_padding":"10px",
-    "colorway":[
-        "#fa4f56",
-        "#4c78a8",
-        "#f58518",
-        "#72b7b2",
-        "#54a24b",
-        "#eeca3b",
-        "#b279a2",
-        "#ff9da6",
-        "#9d755d",
-        "#bab0ac"
-    ],
-    "colorscale":[
-        "#fa4f56",
-        "#fe6767",
-        "#ff7c79",
-        "#ff908b",
-        "#ffa39d",
-        "#ffb6b0",
-        "#ffc8c3",
-        "#ffdbd7",
-        "#ffedeb",
-        "#ffffff"
-    ],
-    "font_family":"Raleway",
-    "font_size":"17px",
-    "font_size_smaller_screen":"15px",
-    "font_family_header":"Roboto",
-    "font_size_header":"24px",
-    "font_family_headings":"Roboto",
-    "font_headings_size":None,
-    "header_border":{
-        "width":"0px 0px 0px 0px",
-        "style":"solid",
-        "color":"#e2e2e2",
-        "radius":"0px"
-    },
-    "header_background_color":"#F9F9F9",
-    "header_box_shadow":"0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24)",
-    "title_capitalization":"uppercase",
-    "header_content_alignment":"spread",
-    "header_margin":"0px 0px 15px 0px",
-    "header_padding":"0px",
-    "header_text":"#606060",
-    "heading_text":"#606060",
-    "text":"#606060",
-    "report_font_family":"Computer Modern",
-    "report_font_size":"12px",
-    "report_background_page":"white",
-    "report_background_content":"#FAFBFC",
-    "report_text":"black"
-}
+People_teste_positive = pd.read_sql_query("SELECT * FROM People_teste_positive", cnx)
+Deaths_wihing_28_days = pd.read_sql_query("SELECT * FROM Deaths_wihing_28_days", cnx)
+patients_adm = pd.read_sql_query("SELECT * FROM patients_adm", cnx)
+Virus_tested = pd.read_sql_query("SELECT * FROM Virus_tested", cnx)
+People_vaccinated_regions = pd.read_sql_query("SELECT * FROM People_vaccinated_regions", cnx)
 
-app = dash.Dash()
-colors = {
-    'background': '#111111',
-    'text': '#7FDBFF'
-}
-app.layout = html.Div(style={'backgroundColor': colors['background']}, children=[
-    html.H1(
-        children='Vaccinated',
-        style={
-            'textAlign': 'center',
-            'color': colors['text']
-        }
-    ),
-    html.Div(children='Dash: A web application framework for Python.', style={
-        'textAlign': 'center',
-        'color': colors['text']
-    }),
-    dcc.Graph(
-        id='People_vaccinated_fig',
-        figure=People_vaccinated_fig
-    )
-])
+#### CREATING THE PLOTS ####
 
+# The graphs show in the dashboard are created in advances
+
+# Vaccines plots
+
+People_vaccinated_regions_new = px.line(People_vaccinated_regions, x='date', y='newPeopleVaccinatedFirstDoseByPublishDate',
+              color='areaName')
+People_vaccinated_regions_new.update_layout({
+'plot_bgcolor': 'rgba(0, 0, 0, 0)',
+'paper_bgcolor': 'rgba(0, 0, 0, 0)',
+})
+
+
+
+
+external_stylesheets = [
+    {
+        "href": "https://fonts.googleapis.com/css2?"
+                "family=Lato:wght@400;700&display=swap",
+        "rel": "stylesheet",
+    },
+]
+
+app = JupyterDash(external_stylesheets=external_stylesheets) # For jupyter notebook
+
+app.layout = html.Div([
+            html.Div([
+               html.Div(children="Coronavirus (COVID-19) in the UK",className="Title",
+                        style={
+                        'backgroundColor':'white',
+                        'color':'black',
+                       # 'height':'40px',
+                        'width':'80%',
+                        'text-align':'left',
+                        'display':'inline-block',
+                        'font-size': "40px",
+                        }),
+                html.Img(src=app.get_asset_url('./logo_hospital.png'),style={
+                        'backgroundColor':'white',
+                        'color':'lightsteelblue',
+                        'height':'50px',
+                        'width':'5%',
+                        'text-align':'left',
+                        'display':'inline-block'}),
+                        ], ),
+    html.P(
+            children="The official UK government website for data and insights on coronavirus (COVID-19).",
+        ),
+             html.Div([
+               html.Div(children="People vaccinated",className="box1",
+                        style={
+                        'backgroundColor':'white',
+                        "text-decoration": "underline",
+                        "border-style": "solid",
+                        "border-color": "#3B73E5",
+                        "border-width": "1px",
+                        'color':'black',
+                        'margin-left':'10px',
+                        "background-color": "#C6D7F9",
+                        'height':'100px',
+                        'width':'1000px',
+                        'text-align':'left',
+                        'display':'inline-block'},
+                        
+                       ),
+                        ]),
+    
+           
+               html.Div([
+               html.Div(children="Block 1",className="box1",
+                        style={
+                        'backgroundColor':'darkslategray',
+                        'color':'lightsteelblue',
+                        'height':'100px',
+                        'margin-left':'10px',
+                        'width':'45%',
+                        'text-align':'center',
+                        'display':'inline-block'
+                        }),
+            
+                html.Div(dcc.Dropdown (options=[{'label':"England",'value':"England"},{'label':"Northern Ireland",'value':"Northern Ireland"},{'label':"Scotland",'value':"Scotland"},{'label':"Wales",'value':"Wales"},],value = "England"),className="box2",
+                         style={
+                        'backgroundColor':'darkslategray',
+                        'color':'lightsteelblue',
+                        'height':'100px',
+                        'margin-left':'10px',
+                        'text-align':'center',
+                        'width':'40%',
+                        'display':'inline-block'
+               })
+                        ]),
+            
+            
+      ])
+
+#app.run_server(mode='external')
 if __name__ == '__main__':
     app.run_server(debug=True)
