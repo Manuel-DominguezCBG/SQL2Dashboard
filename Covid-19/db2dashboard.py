@@ -1,3 +1,14 @@
+"""
+NAME:          db2dashboard.py
+AUTHOR:        Manuel Dominguez
+EMAIL:         manolo.biomero@gmail.com
+DATE:          18/05/2021
+INSTITUTION:   Salisbury Hospital
+DESCRIPTION:   Completed COVID-19 dashboard is created with this  code
+               
+"""
+
+
 
 import dash                              # pip install dash
 import dash_html_components as html
@@ -14,6 +25,8 @@ from wordcloud import WordCloud          # pip install wordcloud
 import sqlite3                           # pip install sqlite3
 import plotly.graph_objects as go
 import dash_table
+from dash.dependencies import Input, Output, State
+
 
 
 
@@ -39,7 +52,7 @@ Deaths_wihing_28_days = pd.read_sql_query("SELECT * FROM Deaths_wihing_28_days",
 patients_adm = pd.read_sql_query("SELECT * FROM patients_adm", cnx)
 Virus_tested = pd.read_sql_query("SELECT * FROM Virus_tested", cnx)
 People_vaccinated_regions = pd.read_sql_query("SELECT * FROM People_vaccinated_regions", cnx)
-
+example2show = People_vaccinated[['date','newPeopleVaccinatedFirstDoseByPublishDate']]
 
 # Style sheets taken from external sources: https://dash-bootstrap-components.opensource.faculty.ai/docs/themes/
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SKETCHY])
@@ -50,17 +63,21 @@ app.layout = dbc.Container([
             dbc.Card([ 
                 dbc.CardImg(src='/assets/wrgllogohighres.png')                   
             ],className='mb-2'),
-            dbc.Card([
-                dbc.CardBody([
-                    dbc.CardLink("By Manuel Dominguez", target="_blank",          
-                                 href="https://github.com/Manuel-DominguezCBG"
-                    )
-                ])
-            ]),
+                     dbc.Button("Author", id="Author"),
+        dbc.Modal(
+            [
+                dbc.ModalHeader("Manuel Dominguez"),
+                dbc.ModalBody("A clinical bioinformacian who is learning how to create informative and beautiful dashboards"),
+                dbc.ModalFooter(
+                    dbc.Button("Close", id="close", className="ml-auto")
+                ),
+            ],
+            id="modal",
+        ),
         ], width=2),
         dbc.Col([
             dbc.Card([ 
-                dbc.CardLink("COVID-19 in the UK", target="_blank", 
+                dbc.CardLink("COVID-19 in the UK", target="_blank", id = "Title",
                     style = {'font-size': "30px"}                                 
                                  ),     
                 dbc.CardLink("Vaccination, cases and death patients data in the selected period of time", 
@@ -70,7 +87,7 @@ app.layout = dbc.Container([
                 dbc.CardBody([
                     dcc.DatePickerSingle(
                         id='my-date-picker-start',
-                        date=date(2021, 5, 5),
+                        date=date(2021, 1, 27),
                         className='ml-5',
                         style = {'width':'8',
                         'height':'5' } 
@@ -93,7 +110,7 @@ app.layout = dbc.Container([
                     dbc.CardHeader(Lottie(options=options, width="40%", height="40%", url=vaccine)),
                     dbc.CardBody([
                     html.H6('People vaccinated'),
-                    html.H2(id='content-connections', children="000")
+                    html.H2(id='content-connections', children="000"),
                 ], style={'textAlign':'center'})
             ]),
         ], width=2),
@@ -130,7 +147,8 @@ app.layout = dbc.Container([
                 dbc.CardBody([
                     html.H6('Virus test conducted'),
                     html.H2(id='content-reactions', children="000")
-                ], style={'textAlign': 'center'})
+                ], 
+                style={'textAlign': 'center'}),
             ]),
         ], width=2),
     ],className='mb-2'),
@@ -138,9 +156,24 @@ app.layout = dbc.Container([
         dbc.Col([
             dbc.Card([
                 dbc.CardBody([
-                    dcc.Graph(id='line-chart', figure={}, config={'displayModeBar': False}),
-                ])
-            ]),
+                    dcc.Graph(id='line-chart', figure={}, config={'displayModeBar': False},
+                    ),
+                ]),
+                       dbc.Button("Wanna see this data?", id="data_show",size="sm",active=True,className="mr-1"),
+                       dbc.Modal(
+                           [
+                               dbc.ModalHeader("Number of people vaccinated by days from 2021-01-10 to 2021-05-08"),
+                               dbc.ModalBody(dbc.Table.from_dataframe(example2show, striped=False, bordered=True, hover=False),
+                               ),
+                               dbc.ModalFooter(
+                                   dbc.Button("Close", id="close2", className="ml-auto"),
+                                   ),
+                            ],
+                                   id="modall",
+                                ),
+                        dbc.Button("Wanna donwload this data",id="link-centered", className="ml-auto",size="sm",
+                        href='https://raw.githubusercontent.com/Manuel-DominguezCBG/SQL2Dashboard/main/Covid-19/Data/People_vaccinated.csv')
+                        ]),
         ], width=8),
         dbc.Col([
             dbc.Card([
@@ -165,16 +198,9 @@ app.layout = dbc.Container([
                 ])
             ]),
         ], width=8),
-        
     ],className='mb-2'),
-   
-    
 ],
-
-
-
  fluid=True)
-
 
 # The callback for the 5 cards 
 @app.callback(
@@ -210,10 +236,7 @@ def update_small_cards(start_date, end_date):
     Virus_tested2 = Virus_tested[(Virus_tested['date']>=start_date) & (Virus_tested['date']<=end_date)]
     TOTAL_VT = Virus_tested2['newVirusTests'].sum()
 
-
     return TOTAL_PV, TOTAL_TP, TOTAL_deaths, TOTAL_PA, TOTAL_VT
-
-     
 
 # Line Chart 
 @app.callback(
@@ -253,7 +276,6 @@ def update_line(start_date, end_date):
 )
     return fig_line
 
-
 # Bar Chart 
 @app.callback(
     Output('bar-chart','figure'),
@@ -285,10 +307,9 @@ def update_bar(start_date, end_date):
         color='#000000'
              ),
     paper_bgcolor='rgba(0,0,0,0)',
-    plot_bgcolor='rgba(0,0,0,0)' # Transparent background here looks better 
+    plot_bgcolor='rgba(0,0,0,0)'            # Transparent background here looks better 
                           )
     return fig_bare
-
 
 # Pie Chart 
 @app.callback(
@@ -322,7 +343,6 @@ def update_pie(start_date, end_date):
 
     return fig_piee
 
-
 # Line chart 2
 @app.callback(
     Output('line-chart2','figure'),
@@ -340,7 +360,7 @@ def update_line2(start_date, end_date):
     fig_line2.add_trace(go.Scatter(
     x=Deaths_wihing_28_days2["date"],
     y=Deaths_wihing_28_days2['newDeaths28DaysByDeathDate'],
-    name = "Deceased patients", 
+    name = "Deceased patients", # Name of the labels in the legend
 
     marker=dict(
         color="blue"
@@ -382,5 +402,32 @@ def update_line2(start_date, end_date):
 )
     return fig_line2
 
+# For the modal author
+@app.callback(
+    Output("modal", "is_open"),
+    [Input("Author", "n_clicks"), Input("close", "n_clicks")],
+    [State("modal", "is_open")],
+)
+def toggle_modal(n1, n2, is_open):
+    if n1 or n2:
+        return not is_open
+    return is_open
+
+# For the modal author
+@app.callback(
+    Output("modall", "is_open"),
+    [Input("data_show", "n_clicks"), Input("close2", "n_clicks")],
+    [State("modall", "is_open")],
+)
+def toggle_modal(n1, n2, is_open):
+    if n1 or n2:
+        return not is_open
+    return is_open
+
+
 if __name__=='__main__':
     app.run_server(debug=True, port=8001)
+
+
+# https://dash-bootstrap-components.opensource.faculty.ai/examples/graphs-in-tabs/
+# https://dash-bootstrap-components.opensource.faculty.ai/docs/components/card/#
