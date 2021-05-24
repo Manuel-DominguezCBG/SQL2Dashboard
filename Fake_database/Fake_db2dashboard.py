@@ -8,13 +8,6 @@ DESCRIPTION:   From fake database to dashboard
                
 """
 
-
-
-
-
-
-
-
 import dash                              # pip install dash
 import dash_html_components as html
 import dash_core_components as dcc
@@ -106,7 +99,7 @@ app.layout = dbc.Container([
                 dbc.Card([
                     dbc.CardHeader(html.H3('Cases'),style={'textAlign':'center'}),
                     dbc.CardBody([
-                    html.H2(id='Cases', children="000"),
+                    html.H2(id='total_cases', children="000"),
                 ], style={'textAlign':'center'})  
             ], style={'margin-right': '40px', 'margin-left': '30px'}
             #       color="info"
@@ -114,9 +107,9 @@ app.layout = dbc.Container([
         ], width=3),
         dbc.Col([
             dbc.Card([
-                dbc.CardHeader(html.H3('Deads'),style={'textAlign':'center'}),
+                dbc.CardHeader(html.H3('total_deads'),style={'textAlign':'center'}),
                     dbc.CardBody([
-                    html.H2(id='Deads', children="000"),
+                    html.H2(id='total_deads', children="000"),
                 ], style={'textAlign':'center'})
             ], style={'margin-right': '40px', 'margin-left': '0px'}
             #color="info"
@@ -174,21 +167,22 @@ app.layout = dbc.Container([
 
 # The callback for the 3 cards 
 @app.callback(
-    Output(component_id = 'Cases',component_property = 'children'),
-    #Output('Deads','children'),
+    Output(component_id = 'total_cases',component_property = 'children'),
+    Output('total_deads','children'),
     #Output('Average-hospitalised','children'),
     [Input(component_id='my_checklist', component_property='value')]
 )
 def update_small_cards(options_chosen):
     
-    dff = covid_19_admission[covid_19_admission['Hospital_ID'].isin(options_chosen)]
-    print(covid_19_admission)
-    print(dff)
-    print(options_chosen)
-    TOTAL_PA = len(dff)
+    covid_19_admission_df = covid_19_admission[covid_19_admission['Hospital_ID'].isin(options_chosen)]
+    total_cases = len(covid_19_admission_df)
+    total_deads_df = covid_19_death[covid_19_death['Hospital_ID'].isin(options_chosen)]
+    total_deads = len(total_deads_df)
 
-    return TOTAL_PA
+    return total_cases, total_deads
 
 
 if __name__=='__main__':
     app.run_server(debug=True, port=8001)
+
+    
