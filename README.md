@@ -9,6 +9,7 @@
 This is a project as part of my learning in the STP. This project aims to overcome some of the competencies of the Computing **Computing for Clinical Scientists**. This work can be split in three main tasks:
 
 1. Folder **Covid-19**. From datasets with Covid-19 data, I have create a database. With this database I have desinged a dashboard. This folder contained:
+```sh
 ├── COVID-19_data_to_dashboard.ipynb
 ├── Data       `All data used to create this  COVID_19.db database`
 │   ├── COVID_19.db
@@ -29,6 +30,7 @@ This is a project as part of my learning in the STP. This project aims to overco
 │   └── wrgllogohighres.png
 ├── db2dashboard.py     `The script to created the dashboard`
 └── tutorial.zip   `Many drafts and tutorial I have used to learn how to do this`
+```
 
 2.  Folder **Fake_database** A fake database has been created with a more elaborated tecnhical details in order to work with SQL commands and learn about how to link the tables. 
 ├── 1_Creating_the_fake_database.ipynb    `Where I have created the fake data to populate the tables`
