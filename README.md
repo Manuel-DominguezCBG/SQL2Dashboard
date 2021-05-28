@@ -40,12 +40,48 @@ A screenshot of this dashboard
 
 And the content of this table
 ```sh
-├── 1_Creating_the_fake_database.ipynb # Where I have created the fake data and create the database
-├── 2_Database_manipulation.ipynb  # To become familiar with SQL commands
-├── 2fake_db.db  # The database 
-├── Fake_db2dashboard.py # The script to created the dashboard
+├── 1_Creating_the_fake_database.ipynb                  # Where I have created the fake data and create the database
+├── 2_Database_manipulation.ipynb                       # To become familiar with SQL commands
+├── 2fake_db.db                                         # The database 
+├── Fake_db2dashboard.py                                # The script to created the dashboard
 ├── assets
 │ ├── linkedin-logo2.png
 │ ├── logo_hospital.png
 │ └── wrgllogohighres.png
-└── tutorials.zip # More draft code and tutorial to practice`
+└── tutorials.zip                                        # More draft code and tutorial to practice
+```
+
+
+3. Folder **Testing**
+```sh
+├── Pipfile
+├── Pipfile.lock
+├── chromedriver
+├──Test
+│ ├── test_db2dashboard.py
+│ ├──  __pycache__
+│ ├── assets
+│ ├──  report.html
+```
+
+In this section I have builded a WebPageTest using [Python](https://blog.testproject.io/2019/05/16/python-testing-framework-pros-cons/), [pytest](https://blog.testproject.io/2019/07/16/python-test-automation-project-using-pytest/), and [Selenium WebDriver](https://blog.testproject.io/2017/11/28/inside-selenium-webdriver/).
+
+Details of what I have done and an explanation of how to run the automatization test can be found in the script  (test_db2dashboard.py). In general what I have done is to test most of the elements of the dashboard such as text, buttons and the data input and data output.  
+
+The results of tests carried out are shown below.
+
+```sh
+======================================= **4 passed** in 33.37s =======================================
+(sql_dashboard) monkiky@Monkikys-MacBook-Pro python-webui-testing % pipenv run python -m pytest -v -s
+**====================================== test session starts =======================================**
+platform darwin -- Python 3.8.5, pytest-6.2.4, py-1.10.0, pluggy-0.13.1 -- /Users/monkiky/.local/share/virtualenvs/python-webui-testing-JXNJ2lAn/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/monkiky/Desktop/SQL2Dashboard/For_testing/python-webui-testing
+**collected 4 items**
+tests/test_db2dashboard.py::test_text PASSED
+tests/test_db2dashboard.py::test_buttons PASSED
+tests/test_db2dashboard.py::test_dates PASSED
+tests/test_db2dashboard.py::test_card_values PASSED
+======================================= **4 passed** in 28.68s =======================================
+(sql_dashboard) monkiky@Monkikys-MacBook-Pro python-webui-testing %
+```
