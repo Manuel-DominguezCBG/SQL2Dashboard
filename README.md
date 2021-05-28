@@ -58,7 +58,7 @@ Then in a second Notebook (*2_Database_manipulation.ipynb*) I show the use of th
 Finally, in the script *Fake_db2dashboard.py* I have combined all learned in the previous tasks to create a second dashboard that shows  some results from the different tables of the database. 
 
 A screenshot of this dashboard
-![Alt text](https://github.com/Manuel-DominguezCBG/SQL2Dashboard/blob/main/Covid-19/Images/second_dashboard.png "")
+![Alt text](https://github.com/Manuel-DominguezCBG/SQL2Dashboard/blob/main/Covid-19/Images/2.png "")
 
 And the content of this table
 ```sh
