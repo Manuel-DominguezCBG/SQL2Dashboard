@@ -20,7 +20,7 @@ The second graph is a bar chart that shows accumulative data of people vaccinate
 but only showing these data in the period of time selected by the user. The third one is a pie chart that shows the proportion of people vaccinated in the total UK population.
 The last plot is a line chart that shows the trends of  people admitted in hospitals and deaths people by covid. 
 
-![Alt text](https://github.com/Manuel-DominguezCBG/SQL2Dashboard/blob/main/Covid-19/Images/db2dashboard.png "")
+![Alt text](https://github.com/Manuel-DominguezCBG/SQL2Dashboard/blob/main/Covid-19/Images/1.png "")
 
 The content of this folder:
 ```sh

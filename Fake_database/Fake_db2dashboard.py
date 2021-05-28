@@ -76,7 +76,7 @@ cases_by_counties['Perc_Beds'] = (cases_by_counties['Number of positive cases'] 
 
 
 fig_map2 = px.choropleth(cases_by_counties, geojson=counties_corrected, locations='Location', featureidkey="properties.nuts218cd", color='Perc_Beds',
-                            color_continuous_scale="bluered", labels={'label name':'label name'}, title='Covid-19 cases reported per counties',
+                            color_continuous_scale="bluered", labels={'label name':'label name'}, title='Ratio Covid patients/ ITU beds',
                             scope="europe")
 
 def from_dob_to_age(born):
@@ -95,7 +95,7 @@ app.layout = dbc.Container([
     dbc.Row([                                                                  
         dbc.Col([
             dbc.Card([ 
-                dbc.CardImg(src='/assets/wrgllogohighres.png')                   
+                dbc.CardImg(src='/assets/Logo_for_dashboard.png')                   
             ],className='mb-2'),
                      dbc.Button("Author", id="Author"),
         dbc.Modal(
