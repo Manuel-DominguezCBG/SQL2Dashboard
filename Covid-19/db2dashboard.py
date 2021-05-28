@@ -77,7 +77,7 @@ app.layout = dbc.Container([
         ], width=2),
         dbc.Col([
             dbc.Card([ 
-                dbc.CardLink("COVID-19 in the UK", target="_blank", id = "Title",
+                dbc.CardLink("COVID-19 in the UK", target="_blank", id ="Title",
                     style = {'font-size': "30px"}                                 
                                  ),     
                 dbc.CardLink("Vaccination, cases and death patients data in the selected period of time", 
@@ -94,7 +94,7 @@ app.layout = dbc.Container([
                                         ),
                                         dcc.DatePickerSingle(
                                             id='my-date-picker-end',
-                                            date=date(2021, 8, 5),
+                                            date=date(2021, 1, 28),
                                             className='mb-2 ml-2'
                                         ),
                            ])
@@ -118,7 +118,7 @@ app.layout = dbc.Container([
             dbc.Card([
                 dbc.CardHeader(Lottie(options=options, width="40%", height="40%", url=cases)),
                 dbc.CardBody([
-                    html.H6('People tested positive'),
+                    html.H6('People tested positive', id ="Title_card1" ),
                     html.H2(id='content-companies', children="000")
                 ], style={'textAlign':'center'})
             ]),
@@ -127,7 +127,7 @@ app.layout = dbc.Container([
             dbc.Card([
                 dbc.CardHeader(Lottie(options=options, width="40%", height="40%", url=death)),
                 dbc.CardBody([
-                    html.H6('Deaths within 28 days of positive test'),
+                    html.H6('Deaths within 28 days of positive test', id="Title_card2"),
                     html.H2(id='content-msg-in', children="000")
                 ], style={'textAlign':'center'})
             ]),
@@ -136,7 +136,7 @@ app.layout = dbc.Container([
             dbc.Card([
                 dbc.CardHeader(Lottie(options=options, width="40%", height="40%", url=patients)),
                 dbc.CardBody([
-                    html.H6('Patients admitted'),
+                    html.H6('Patients admitted', id ="Title_card3"),
                     html.H2(id='content-msg-out', children="000")
                 ], style={'textAlign': 'center'})
             ]),
@@ -145,7 +145,7 @@ app.layout = dbc.Container([
             dbc.Card([
                 dbc.CardHeader(Lottie(options=options, width="40%", height="40%", url=tested)),
                 dbc.CardBody([
-                    html.H6('Virus test conducted'),
+                    html.H6('Virus test conducted', id="Title_card4"),
                     html.H2(id='content-reactions', children="000")
                 ], 
                 style={'textAlign': 'center'}),
