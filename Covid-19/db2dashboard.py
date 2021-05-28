@@ -60,7 +60,7 @@ app.layout = dbc.Container([
     dbc.Row([                                                                  
         dbc.Col([
             dbc.Card([ 
-                dbc.CardImg(src='/assets/wrgllogohighres.png')                   
+                dbc.CardImg(src='/assets/Logo_for_dashboard.png')                   
             ],className='mb-2'),
                      dbc.Button("Author", id="Author"),
         dbc.Modal(
