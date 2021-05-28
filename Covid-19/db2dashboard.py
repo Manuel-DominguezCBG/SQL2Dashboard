@@ -4,8 +4,7 @@ AUTHOR:        Manuel Dominguez
 EMAIL:         manolo.biomero@gmail.com
 DATE:          18/05/2021
 INSTITUTION:   Salisbury Hospital
-DESCRIPTION:   Completed COVID-19 dashboard is created with this  code
-               
+DESCRIPTION:   Completed COVID-19 dashboard is created with this  code         
 """
 
 
@@ -76,16 +75,12 @@ app.layout = dbc.Container([
         ),
         ], width=2),
         dbc.Col([
-            dbc.Card([ 
-                dbc.CardLink("COVID-19 in the UK", target="_blank", id ="Title",
-                    style = {'font-size': "30px"}                                 
-                                 ),     
-                dbc.CardLink("Vaccination, cases and death patients data in the selected period of time", 
-                target="_blank", 
-                    style = {'font-size': "10px"}                                 
-                                 ),                                                                    
+            dbc.Card([                                                              
                 dbc.CardBody([
-                    dcc.DatePickerSingle(
+
+                html.H3('Coronavirus (COVID-19) in the UK', id="Title"),
+                html.H6('The dashboard for data and insights COVID-19.', id="SubTitle"),
+                dcc.DatePickerSingle(
                         id='my-date-picker-start',
                         date=date(2021, 1, 27),
                         className='ml-5',

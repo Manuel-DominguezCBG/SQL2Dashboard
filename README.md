@@ -18,8 +18,8 @@ Additionally, the dashboard shows 4 graphs. The first is a line chart and shows 
 
 The content of this folder can be seen here:
 ```sh
-├── COVID-19_data_to_dashboard.ipynb  # A JN where I explain how to create a database from CSV files
-├── Data  # All data used to create this  COVID_19.db database
+├── COVID-19_data_to_dashboard.ipynb                 # A JN where I explain how to create a database from CSV files
+├── Data                                             # All data used to create this  COVID_19.db database
 │ ├── COVID_19.db
 │ ├── Deaths_within_28_days_of_positive.csv
 │ ├── Patients_admitted_to\ hospital.csv
@@ -28,14 +28,14 @@ The content of this folder can be seen here:
 │ ├── UK_total_cases.csv
 │ ├── Virus_tested.csv
 │ └── vaccinated_regions.csv
-├── Images # Some images for the notebooks
+├── Images                                            # Some images for the notebooks
 │ ├── screen.jpg
 │ ├── screenshot-aca1dabf.png
 │ └── screenshot-aca1dwwabf.jpg
-├── assets # This folder is needed to design the dashboard
+├── assets                                            # This folder is needed to design the dashboard
 │ ├── linkedin-logo2.png
 │ ├── logo_hospital.png
 │ └── wrgllogohighres.png
-├── db2dashboard.py # The script to created the dashboard
-└── tutorial.zip  # Many drafts and tutorial used to learn
+├── db2dashboard.py                                    # The script to created the dashboard
+└── tutorial.zip                                       # Many drafts and tutorial used to learn
 ```
