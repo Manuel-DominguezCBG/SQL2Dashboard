@@ -116,8 +116,6 @@ a second dashboard that shows some results from the different tables of the data
 
 
 	```sh
-
-
 **====================================== test session starts =======================================**
 platform darwin -- Python 3.8.5, pytest-6.2.4, py-1.10.0, pluggy-0.13.1 -- /Users/monkiky/.local/share/virtualenvs/python-webui-testing-JXNJ2lAn/bin/python
 cachedir: .pytest_cache
@@ -128,5 +126,4 @@ tests/test_db2dashboard.py::test_buttons PASSED
 tests/test_db2dashboard.py::test_dates PASSED
 tests/test_db2dashboard.py::test_card_values PASSED
 ======================================= **4 passed** in 28.68s =======================================
-
 	```
