@@ -81,16 +81,16 @@ a second dashboard that shows some results from the different tables of the data
 	The content of this table:
 
 	```sh
-├── 1_Creating_the_fake_database.ipynb                  # Where I have created the fake data and create the database
-├── 2_Database_manipulation.ipynb                       # To become familiar with SQL commands
-├── 2fake_db.db                                         # The database 
-├── Fake_db2dashboard.py                                # The script to created the dashboard
-├── assets
-│ ├── linkedin-logo2.png
-│ ├── logo_hospital.png
-│ └── wrgllogohighres.png
-└── tutorials.zip                                        # More draft code and tutorial to practice
-```
+	├── 1_Creating_the_fake_database.ipynb                  # Where I have created the fake data and create the database
+	├── 2_Database_manipulation.ipynb                       # To become familiar with SQL commands
+	├── 2fake_db.db                                         # The database 
+	├── Fake_db2dashboard.py                                # The script to created the dashboard
+	├── assets
+	│ ├── linkedin-logo2.png
+	│ ├── logo_hospital.png
+	│ └── wrgllogohighres.png
+	└── tutorials.zip                                        # More draft code and tutorial to practice	
+	```
 
 
 3. Folder **Testing** 
@@ -104,14 +104,14 @@ a second dashboard that shows some results from the different tables of the data
 
 
 	```sh
-├── Pipfile
-├── Pipfile.lock
-├── chromedriver
-├──Test
-│ ├── test_db2dashboard.py
-│ ├──  __pycache__
-│ ├── assets
-│ ├──  report.html
+	├── Pipfile
+	├── Pipfile.lock
+	├── chromedriver
+	├──Test
+	│ ├── test_db2dashboard.py
+	│ ├──  __pycache__
+	│ ├── assets
+	│ ├──  report.html
 	```
 
 
