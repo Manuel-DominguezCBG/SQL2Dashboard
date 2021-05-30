@@ -95,7 +95,8 @@ a second dashboard that shows some results from the different tables of the data
 
 3. Folder **Testing** 
 
-	In this section, I have built a WebPageTest using [Python](https://blog.testproject.io/2019/05/16/python-testing-framework-pros-cons/), $
+	In this section, I have built a WebPageTest using [Python](https://blog.testproject.io/2019/05/16/python-testing-framework-pros-cons/),
+	[Selenium](https://selenium-python.readthedocs.io/) and [unittest](https://docs.python.org/3/library/unittest.html). 
 
 	In general what I have done is to test most of the elements of the dashboard such as text, buttons and the data input and data output.
  	Details of what I have done and an explanation of how to run the automatization test can be found in the script  *test_db2dashboard.py*$
