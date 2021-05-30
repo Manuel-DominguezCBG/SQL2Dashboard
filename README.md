@@ -89,12 +89,12 @@ And the content of this table
 │ ├──  report.html
 ```
 
-In this section I have builded a WebPageTest using [Python](https://blog.testproject.io/2019/05/16/python-testing-framework-pros-cons/), [pytest](https://blog.testproject.io/2019/07/16/python-test-automation-project-using-pytest/), and [Selenium WebDriver](https://blog.testproject.io/2017/11/28/inside-selenium-webdriver/).
+In this section, I have built a WebPageTest using [Python](https://blog.testproject.io/2019/05/16/python-testing-framework-pros-cons/), [pytest](https://blog.testproject.io/2019/07/16/python-test-automation-project-using-pytest/), and [Selenium WebDriver](https://blog.testproject.io/2017/11/28/inside-selenium-webdriver/).
 
 In general what I have done is to test most of the elements of the dashboard such as text, buttons and the data input and data output.
  Details of what I have done and an explanation of how to run the automatization test can be found in the script  *test_db2dashboard.py*. 
 
-The results of tests carried out are shown below.
+The results of the tests carried out are shown below.
 
 ```sh
 
