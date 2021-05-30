@@ -76,11 +76,11 @@ Finally, in the script *Fake_db2dashboard.py*
 I have combined all learned in the previous tasks to create a 
 a second dashboard that shows some results from the different tables of the database.
 
-![Alt text](https://github.com/Manuel-DominguezCBG/SQL2Dashboard/blob/main/Covid-19/Images/2.png "")
+	![Alt text](https://github.com/Manuel-DominguezCBG/SQL2Dashboard/blob/main/Covid-19/Images/2.png "")
 
-The content of this table:
+	The content of this table:
 
-```sh
+	```sh
 ├── 1_Creating_the_fake_database.ipynb                  # Where I have created the fake data and create the database
 ├── 2_Database_manipulation.ipynb                       # To become familiar with SQL commands
 ├── 2fake_db.db                                         # The database 
@@ -103,7 +103,7 @@ The content of this table:
 	The results of the tests carried out are shown below.
 
 
-```sh
+	```sh
 ├── Pipfile
 ├── Pipfile.lock
 ├── chromedriver
@@ -112,16 +112,10 @@ The content of this table:
 │ ├──  __pycache__
 │ ├── assets
 │ ├──  report.html
-```
+	```
 
-In this section, I have built a WebPageTest using [Python](https://blog.testproject.io/2019/05/16/python-testing-framework-pros-cons/), [pytest](https://blog.testproject.io/2019/07/16/python-test-automation-project-using-pytest/), and [Selenium WebDriver](https://blog.testproject.io/2017/11/28/inside-selenium-webdriver/).
 
-In general what I have done is to test most of the elements of the dashboard such as text, buttons and the data input and data output.
- Details of what I have done and an explanation of how to run the automatization test can be found in the script  *test_db2dashboard.py*. 
-
-The results of the tests carried out are shown below.
-
-```sh
+	```sh
 
 
 **====================================== test session starts =======================================**
@@ -135,4 +129,4 @@ tests/test_db2dashboard.py::test_dates PASSED
 tests/test_db2dashboard.py::test_card_values PASSED
 ======================================= **4 passed** in 28.68s =======================================
 
-```
+	```
