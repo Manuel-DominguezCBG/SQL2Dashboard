@@ -27,37 +27,40 @@ This repository contains a learning project in which I have been working with da
 
 	![Alt text](https://github.com/Manuel-DominguezCBG/SQL2Dashboard/blob/main/Covid-19/Images/1.png "")
 
-The content of this folder:
-```sh
-├── COVID-19_data_to_dashboard.ipynb                 # A JN where I explain how to create a database from CSV files
-├── Data                                             # All data used to create this  COVID_19.db database
-│ ├── COVID_19.db
-│ ├── Deaths_within_28_days_of_positive.csv
-│ ├── Patients_admitted_to\ hospital.csv
-│ ├── People_tested\ positive.csv
-│ ├── People_vaccinated.csv
-│ ├── UK_total_cases.csv
-│ ├── Virus_tested.csv
-│ └── vaccinated_regions.csv
-├── Images                                            # Some images for the notebooks
-│ ├── screen.jpg
-│ ├── screenshot-aca1dabf.png
-│ └── screenshot-aca1dwwabf.jpg
-├── assets                                            # This folder is needed to design the dashboard
-│ ├── linkedin-logo2.png
-│ ├── logo_hospital.png
-│ └── wrgllogohighres.png
-├── db2dashboard.py                                    # The script to created the dashboard
-└── tutorial.zip                                       # Many drafts and tutorial used to learn
-```
+	The content of this folder:
 
-If you wish to run the dashboard go to the folder Covid-19 and introduce
+	```sh
+	├── COVID-19_data_to_dashboard.ipynb                 # A JN where I explain how to create a database from CSV files
+	├── Data                                             # All data used to create this  COVID_19.db database
+	│ ├── COVID_19.db
+	│ ├── Deaths_within_28_days_of_positive.csv
+	│ ├── Patients_admitted_to\ hospital.csv
+	│ ├── People_tested\ positive.csv
+	│ ├── People_vaccinated.csv
+	│ ├── UK_total_cases.csv
+	│ ├── Virus_tested.csv
+	│ └── vaccinated_regions.csv
+	├── Images                                            # Some images for the notebooks
+	│ ├── screen.jpg
+	│ ├── screenshot-aca1dabf.png
+	│ └── screenshot-aca1dwwabf.jpg
+	├── assets                                            # This folder is needed to design the dashboard
+	│ ├── linkedin-logo2.png
+	│ ├── logo_hospital.png
+	│ └── wrgllogohighres.png
+	├── db2dashboard.py                                    # The script to created the dashboard
+	└── tutorial.zip                                       # Many drafts and tutorial used to learn
+	```
 
-> python db2dashboard.py
+	If you wish to run the dashboard go to the folder Covid-19 and introduce
 
-You might need to install many libraries so I recommend creating a new environment.
+	> python db2dashboard.py
 
-2.  Folder **Fake_database** Regardless of what has been done previously, a fake data database has been created 
+	You might need to install many libraries so I recommend creating a new environment.
+
+2.  Folder **Fake_database** From fake data in a db to a dashboard 
+
+	Regardless of what has been done previously, a fake data database has been created 
 contained 4 linked tables in order to work and get familiar with SQL commands. 
 Briefly, I have populated the first table with people data (NHS number, name, gender...).
 In this simulation, 5% of these people got Covid and needed to be admitted to hospitals.
