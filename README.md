@@ -50,26 +50,32 @@ The content of this folder:
 └── tutorial.zip                                       # Many drafts and tutorial used to learn
 ```
 
-If you wish to run the dashboard go to the folder Covid-19 and introduce 
+If you wish to run the dashboard go to the folder Covid-19 and introduce
 
 > python db2dashboard.py
 
+You might need to install many libraries so I recommend creating a new environment.
 
-2.  Folder **Fake_database** Regardless of what has been done previously, a fake data database has been created contained 4 linked tables in order to work and get familiar with SQL commands.
- Briefly I have populated the first table with people data (NHS number, name, gender...).
- In this simulation, 5% of these people got Covid and needed to be admitted to hospitals,
- this information has been stored in a second table. This table saved  patient ID, the hospital name  where each patient was admitted (41 in total, one per county)
- plus additional data such as date of admission and discharge.
- A 5% of these patients died, this info has been saved in another table.
- And finally the last table with some properties of these 41 hospitals such as the total number of beds,total number of  staff and so on. 
-For details of how this has been carried out, go to the Jupyter Notebook *1_Creating_the_fake_database.ipynb*. 
-Then in a second Notebook (*2_Database_manipulation.ipynb*) I show the use of the most basic SQL command such as JOIN, GROUPBY among otherss. 
-Finally, in the script *Fake_db2dashboard.py* I have combined all learned in the previous tasks to create a second dashboard that shows  some results from the different tables of the database. 
+2.  Folder **Fake_database** Regardless of what has been done previously, a fake data database has been created 
+contained 4 linked tables in order to work and get familiar with SQL commands. 
+Briefly, I have populated the first table with people data (NHS number, name, gender...).
+In this simulation, 5% of these people got Covid and needed to be admitted to hospitals.
+This information has been stored in the second table. This table saved patient ID,
+the hospital name (41 in total, one per county)date of admission and date of discharge.
+A 5% of these patients died, this information has been saved in another table.
+And finally, the last table which contains properties of these 41 hospitals
+such as the total number of beds, total number of staff and so on.
+For details of how this has been carried out, go to the Jupyter Notebook *1_Creating_the_fake_database.ipynb*.
+Then in a second Notebook (*2_Database_manipulation.ipynb*) 
+I show the use of basic SQL command such as JOIN, GROUPBY, SELECT  among others.
+Finally, in the script *Fake_db2dashboard.py*
+I have combined all learned in the previous tasks to create a 
+a second dashboard that shows some results from the different tables of the database.
 
-A screenshot of this dashboard
 ![Alt text](https://github.com/Manuel-DominguezCBG/SQL2Dashboard/blob/main/Covid-19/Images/2.png "")
 
-And the content of this table
+The content of this table:
+
 ```sh
 ├── 1_Creating_the_fake_database.ipynb                  # Where I have created the fake data and create the database
 ├── 2_Database_manipulation.ipynb                       # To become familiar with SQL commands
@@ -83,8 +89,14 @@ And the content of this table
 ```
 
 
-3. Folder **Testing**
+3. Folder **Testing** 
 
+	In this section, I have built a WebPageTest using [Python](https://blog.testproject.io/2019/05/16/python-testing-framework-pros-cons/), $
+
+	In general what I have done is to test most of the elements of the dashboard such as text, buttons and the data input and data output.
+ 	Details of what I have done and an explanation of how to run the automatization test can be found in the script  *test_db2dashboard.py*$
+
+	The results of the tests carried out are shown below.
 
 
 ```sh
