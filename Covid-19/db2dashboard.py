@@ -4,7 +4,8 @@ AUTHOR:        Manuel Dominguez
 EMAIL:         manolo.biomero@gmail.com
 DATE:          18/05/2021
 INSTITUTION:   Salisbury Hospital
-DESCRIPTION:   Completed COVID-19 dashboard is created with this  code         
+DESCRIPTION:   With the database created in the Jupyter Notebook, I have created here a dashboard 
+               by using Dash (Plotly).      
 """
 
 
@@ -39,12 +40,10 @@ options = dict(loop=True, autoplay=True, rendererSettings=dict(preserveAspectRat
 
 
 # The database used
-
 cnx = sqlite3.connect('./Data/COVID_19.db') 
 
 
 # Import tables data from database 
-
 People_vaccinated = pd.read_sql_query("SELECT * FROM People_vaccinated", cnx)
 People_teste_positive = pd.read_sql_query("SELECT * FROM People_teste_positive", cnx)
 Deaths_wihing_28_days = pd.read_sql_query("SELECT * FROM Deaths_wihing_28_days", cnx)
@@ -335,7 +334,6 @@ def update_pie(start_date, end_date):
         )
     )
 )
-
     return fig_piee
 
 # Line chart 2
@@ -423,6 +421,3 @@ def toggle_modal(n1, n2, is_open):
 if __name__=='__main__':
     app.run_server(debug=True, port=8001)
 
-
-# https://dash-bootstrap-components.opensource.faculty.ai/examples/graphs-in-tabs/
-# https://dash-bootstrap-components.opensource.faculty.ai/docs/components/card/#
