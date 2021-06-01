@@ -4,7 +4,7 @@ AUTHOR:        Manuel Dominguez
 EMAIL:         manolo.biomero@gmail.com
 DATE:          18/05/2021
 INSTITUTION:   Salisbury Hospital
-DESCRIPTION:   From fake database to dashboard
+DESCRIPTION:   A script to create a dashboard, this time by using the fake database
                
 """
 
@@ -37,7 +37,6 @@ cnx = sqlite3.connect('./2fake_db.db')
 
 
 # Import tables data from database. This is needed for the cards
-
 patient_data = pd.read_sql_query("SELECT * FROM patient_data", cnx)
 covid_19_admission = pd.read_sql_query("SELECT * FROM covid_19_admission", cnx)
 covid_19_death = pd.read_sql_query("SELECT * FROM covid_19_death", cnx)
