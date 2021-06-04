@@ -8,9 +8,6 @@
 
 2. [What is a good database design](#bases)
 
-3. [Object-Relational Mapping](#dates) 
-
-2.4 [Constraints](#constraints) 
 
 <a id="Data"></a>
 
@@ -48,7 +45,7 @@ A great proportion of the time spent in this project has been related to the cre
 * A good database does not have to have duplicate information (redundant data). This is because it waste space and increse the likehhod of errors and inconsistencies. In my project, to avoid this I spent time thinking on how divide the information into subject-based tables to reduce repetition. I have also specify primary keys to uniquely identify each row and set up the table relationship.
 
 
-* The correctness and the completeness of information are important. If our database contains incorrect information, any report (ie. the dashboard) that pulls information from the database very probably will show incorrect information. In clinical context misinformed report has a negative impact in the health of our patients.
+* The correctness and the completeness of information are important. If our database contains incorrect information, any report (ie. the dashboard) that pulls information from the database very probably will show incorrect information. In clinical context misinformed report might have a negative impact in the health of our patients.
 
 * Normalization rules. To see if my tables are structure correctly I have learned this through the errors that SQL reported to me when for instance I wanted to select one column as the primary key when this column had duplicate tuples. I have understood what is an atomic value and the advantages and disadvantages of unnormalized form over normalized. I have not applied the 11 normalizations steps I have found in the literature because my databases created here are not complex enough to applied this but I am aware of this for future projects.
 
