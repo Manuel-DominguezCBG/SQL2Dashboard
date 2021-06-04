@@ -23,14 +23,14 @@ The last plot is a line chart that shows the trends of  people admitted in hospi
 ![Alt text](https://github.com/Manuel-DominguezCBG/SQL2Dashboard/blob/main/Covid-19/Images/1.png "")
 
 
-Note: If you find dificulties open the notebooks in GitHub, please used this website [nbviewer](https://nbviewer.jupyter.org/)
+Note: If you find difficulties opening the notebooks, please used this website [nbviewer](https://nbviewer.jupyter.org/)
 
 The content of this folder:
 ```sh
 ├── COVID-19_data_to_dashboard.ipynb                 # A JN where I explain how to create a database from CSV files
 ├── Data                                             # All data used to create this  COVID_19.db database
-│ ├── COVID_19.db
-│ ├── Deaths_within_28_days_of_positive.csv
+│ ├── COVID_19.db                                    # The database
+│ ├── Deaths_within_28_days_of_positive.csv          # The datasets used to populate the database:
 │ ├── Patients_admitted_to\ hospital.csv
 │ ├── People_tested\ positive.csv
 │ ├── People_vaccinated.csv
