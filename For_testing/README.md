@@ -15,7 +15,7 @@ Reading about this I have learnt that many steps can be made to solve this.
 
 3. No applied in this learning project but in real scenarios I have reading about
 
-* Secure and reliable systems for data storage, backups, and transfers
+    * Secure and reliable systems for data storage, backups, and transfers
 
  3.2 Documented processes to reduce human error
 
