@@ -78,18 +78,15 @@ And the content of this table
 
 
 3. Folder **Testing**
-
-
-
 ```sh
+├── README.md                                           # Some ideas and personal reflections on why test is important
 ├── Pipfile
 ├── Pipfile.lock
-├── chromedriver
+├── chromedriver                                       # Needed for Seleniun 
 ├──Test
 │ ├── test_db2dashboard.py
 │ ├──  __pycache__
 │ ├── assets
-│ ├──  report.html
 ```
 
 In this section, I have built a WebPageTest using [Python](https://blog.testproject.io/2019/05/16/python-testing-framework-pros-cons/), [pytest](https://blog.testproject.io/2019/07/16/python-test-automation-project-using-pytest/), and [Selenium WebDriver](https://blog.testproject.io/2017/11/28/inside-selenium-webdriver/).
@@ -97,11 +94,11 @@ In this section, I have built a WebPageTest using [Python](https://blog.testproj
 In general what I have done is to test most of the elements of the dashboard such as text, buttons and the data input and data output.
  Details of what I have done and an explanation of how to run the automatization test can be found in the script  *test_db2dashboard.py*. 
 
+ To run the tests from the directory SQL2Dashboard/Testing write ```pipenv run python -m pytest```
+
 The results of the tests carried out are shown below.
 
 ```sh
-
-
 **====================================== test session starts =======================================**
 platform darwin -- Python 3.8.5, pytest-6.2.4, py-1.10.0, pluggy-0.13.1 -- /Users/monkiky/.local/share/virtualenvs/python-webui-testing-JXNJ2lAn/bin/python
 cachedir: .pytest_cache
