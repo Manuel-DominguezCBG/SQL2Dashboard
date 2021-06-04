@@ -3,7 +3,7 @@
 ****
 
 
-This training project has allowed me to see the importance of ensuring as a bioinformatician that what the dashboard shows is faithful to the data contained in the database. When we are called to analyse and display data, users (medical staff or executives) will not look at the accuracy of our procedure. In a clinical context, erroneous decisions can be made from errors in the representation or analysis of the data having as consequence a negative impact in the patient. So as bioinformaticians we are responsable for data quality management.
+This training project has allowed me to understand the importance of ensuring  that the results shows in the dashboard are faithful to the data contained in the database. When we are called to analyse and display data, users (medical staff or executives) will not look at the accuracy of our procedure. In a clinical context, wrong decisions can be made from errors in the representation or analysis of the data having as consequence a negative impact in the patient. So as bioinformaticians we are responsable for data quality management.
 
 For that reason I have wanted to ensure that the data display is correct. To do that and also discover defects or bugs in the software I have applied some tests. The idea is quite simple but put this into practice is very complicate especially for someone who has not applied testing in software development before.
 
@@ -15,7 +15,7 @@ Reading about this I have learnt that many steps can be made to solve this.
 
 3. No applied in this learning project but in real scenarios I have reading about
 
- 3.1 Secure and reliable systems for data storage, backups, and transfers
+* Secure and reliable systems for data storage, backups, and transfers
 
  3.2 Documented processes to reduce human error
 
