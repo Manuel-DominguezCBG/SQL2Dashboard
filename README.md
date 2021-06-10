@@ -66,8 +66,18 @@ A 5% of these patients died, *Covid-19_deaths*. Finally, the last table contains
 
 For details of how this has been carried out, go to the Jupyter Notebook *1_Creating_the_fake_database.ipynb*. 
 
-Then in a second Notebook (*2_Database_manipulation.ipynb*) I show the use of the most basic SQL command such as JOIN, GROUPBY among others. 
+This folder contains a second Notebook (*2_Database_manipulation.ipynb*). This is a tutorial in which I have been working to get familiar SQL command such as JOIN, GROUPBY among others. 
+
 Finally, in the script *Fake_db2dashboard.py* I have combined all skills learned during the project to create a second dashboard that shows some results of this database. 
+
+Description of the dashboard:
+
+    1. A callback at the top in which the user can select one or multiple hospitals.
+    2. Four cards with information about the total number of people tested positive, total deaths, average days people hospitalised and current number of people tested positive.
+    3. A bar chart in which it can be seen if there is a relation between the frequency of going to the hospital and the age of these patients.
+    4. A scatter plot showing the correlation of age of the patients and the number of days hospitalised
+    5. A the UK map showing  the number of patients tested positive by counties
+    6. A similar map but this time showing the ratio of Covid-19 patients and the number of ITU beds by county.
 
 A screenshot of this dashboard
 ![Alt text](https://github.com/Manuel-DominguezCBG/SQL2Dashboard/blob/main/Covid-19/Images/2.png "")
