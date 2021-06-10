@@ -58,7 +58,8 @@ The content of this folder:
 
 The structure of the database looks like this: 
 
-PUT THE IMAGE
+![Alt text](https://github.com/Manuel-DominguezCBG/SQL2Dashboard/blob/main/Covid-19/Images/1.png "")
+
 
 In this simulation, 200000 people are stored in the table *Patient data*. 5% of these people got Covid and need to go to the hospital, *Covid-19 admission* table.
 A 5% of these patients died, *Covid-19_deaths*. Finally, the last table contains info with regard to the properties of the 41 hospitals created in this simulated database.
