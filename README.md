@@ -13,10 +13,10 @@ To allow the user to interact with the data, the design contained 2 callbacks at
 in which use can select a period of time. After this, the dashboard shows covid-19 data in that selected period.
 More specifically  the dashboard returns in 5 cards:
 
-  1. The number of people vaccinated,
-  2. People tested positive,
-  3. Deaths within 28 days of positive test, 
-  4. Patients admitted.
+  * The number of people vaccinated,
+  * People tested positive,
+  * Deaths within 28 days of positive test, 
+  * Patients admitted.
   
 Additionally, the dashboard shows 4 graphs:
 
