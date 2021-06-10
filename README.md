@@ -20,10 +20,10 @@ More specifically  the dashboard returns in 5 cards:
   
 Additionally, the dashboard shows 4 graphs:
 
-  1. A line chart showing the number of people vaccinated per day. Plot allows to filter the info by regions and do zoom in or out. Under the plot, it can be seen two buttons, one that shows the data in a table and a second that allows the user to download the data.
-  2. A bar chart that shows accumulative data of people vaccinated. That is, the total number of people vaccinated since the covid vaccination program began.
-  3. A pie chart showing the proportion of people vaccinated and non vaccinated in the total UK population
-  4. A line chart that shows the trends of  people admitted in hospitals and deaths people by covid. 
+  * A line chart showing the number of people vaccinated per day. Plot allows to filter the info by regions and do zoom in or out. Under the plot, it can be seen two buttons, one that shows the data in a table and a second that allows the user to download the data.
+  * A bar chart that shows accumulative data of people vaccinated. That is, the total number of people vaccinated since the covid vaccination program began.
+  *  A pie chart showing the proportion of people vaccinated and non vaccinated in the total UK population
+  *  A line chart that shows the trends of  people admitted in hospitals and deaths people by covid. 
 
 ![Alt text](https://github.com/Manuel-DominguezCBG/SQL2Dashboard/blob/main/Covid-19/Images/1.png "")
 
