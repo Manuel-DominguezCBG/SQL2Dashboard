@@ -54,16 +54,19 @@ The content of this folder:
 └── tutorial.zip                                       # Many drafts and tutorial used to learn
 ```
 
-2.  Folder **Fake_database** Regardless of what has been done previously, a fake data database has been created contained 4 linked tables in order to work and get familiar with SQL commands.
-Briefly I have populated the first table with people data (NHS number, name, gender...).
-In this simulation, 5% of these people got Covid and needed to be admitted to hospitals,
-this information has been stored in a second table. This table saved  patient ID, the hospital name  where each patient was admitted (41 in total, one per county)
-plus additional data such as date of admission and discharge.
-A 5% of these patients died, this info has been saved in another table.
-And finally the last table with some properties of these 41 hospitals such as the total number of beds,total number of  staff and so on. 
+2.  Folder **Fake_database** Regardless of what has been done previously, a fake data database has been created contained 4 linked tables.
+
+The structure of the database looks like this: 
+
+PUT THE IMAGE
+
+In this simulation, 200000 people are stored in the table *Patient data*. 5% of these people got Covid and need to go to the hospital, *Covid-19 admission* table.
+A 5% of these patients died , *Covid-19_deaths*. Finally the last table containes info with regard to the properties of the 41 hospitals created in this simulated database.
+
 For details of how this has been carried out, go to the Jupyter Notebook *1_Creating_the_fake_database.ipynb*. 
-Then in a second Notebook (*2_Database_manipulation.ipynb*) I show the use of the most basic SQL command such as JOIN, GROUPBY among otherss. 
-Finally, in the script *Fake_db2dashboard.py* I have combined all learned in the previous tasks to create a second dashboard that shows  some results from the different tables of the database. 
+
+Then in a second Notebook (*2_Database_manipulation.ipynb*) I show the use of the most basic SQL command such as JOIN, GROUPBY among others. 
+Finally, in the script *Fake_db2dashboard.py* I have combined all skills learned during the project to create a second dashboard that shows some results of this database. 
 
 A screenshot of this dashboard
 ![Alt text](https://github.com/Manuel-DominguezCBG/SQL2Dashboard/blob/main/Covid-19/Images/2.png "")
