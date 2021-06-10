@@ -58,7 +58,7 @@ The content of this folder:
 
 The structure of the database looks like this: 
 
-![Alt text](https://github.com/Manuel-DominguezCBG/SQL2Dashboard/blob/main/Covid-19/Images/1.png "")
+![Alt text](https://github.com/Manuel-DominguezCBG/SQL2Dashboard/blob/main/Covid-19/Images/68747470733a2f2f6769746875622e636f6d2f4d616e75656c2d446f6d696e6775657a4342472f53514c3244617368626f6172642f626c6f622f6d61696e2f436f7669642d31392f496d616765732f53637265656e73686f74253230323032312d30362d3031253230617425323031302e30302e32362e70.png?raw=true "")
 
 
 In this simulation, 200000 people are stored in the table *Patient data*. 5% of these people got Covid and need to go to the hospital, *Covid-19 admission* table.
