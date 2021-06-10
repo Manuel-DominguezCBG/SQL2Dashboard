@@ -61,7 +61,7 @@ The structure of the database looks like this:
 PUT THE IMAGE
 
 In this simulation, 200000 people are stored in the table *Patient data*. 5% of these people got Covid and need to go to the hospital, *Covid-19 admission* table.
-A 5% of these patients died , *Covid-19_deaths*. Finally the last table containes info with regard to the properties of the 41 hospitals created in this simulated database.
+A 5% of these patients died, *Covid-19_deaths*. Finally, the last table contains info with regard to the properties of the 41 hospitals created in this simulated database.
 
 For details of how this has been carried out, go to the Jupyter Notebook *1_Creating_the_fake_database.ipynb*. 
 
@@ -71,7 +71,7 @@ Finally, in the script *Fake_db2dashboard.py* I have combined all skills learned
 A screenshot of this dashboard
 ![Alt text](https://github.com/Manuel-DominguezCBG/SQL2Dashboard/blob/main/Covid-19/Images/2.png "")
 
-And the content of this folder
+The content of this folder:
 ```sh
 ├── 1_Creating_the_fake_database.ipynb                  # Where I have created the fake data and create the database
 ├── 2_Database_manipulation.ipynb                       # To become familiar with SQL commands (a personal tutorial)
@@ -86,22 +86,11 @@ And the content of this folder
 
 
 3. Folder **Testing**
-```sh
-├── README.md                                           # Some personal reflections that are arised during and after the work of this project 
-├── Pipfile
-├── Pipfile.lock
-├── chromedriver                                        # Needed for Selenium to automatized the tests
-├──Test
-│ ├── test_db2dashboard.py                              # The code of the tests
-│ ├──  __pycache__
-│ ├── assets
-```
-
 In this section, I have built a WebPageTest using [Python](https://blog.testproject.io/2019/05/16/python-testing-framework-pros-cons/), [pytest](https://blog.testproject.io/2019/07/16/python-test-automation-project-using-pytest/), and [Selenium WebDriver](https://blog.testproject.io/2017/11/28/inside-selenium-webdriver/).
 
-In general what I have done is to test most of the elements of the dashboard such as text, buttons and the data input and data output. Details of what I have done and an explanation of how to run the automatization test can be found in the script  *test_db2dashboard.py*. 
+What I have done is to ensure that the information provided by the dashboard is accurate with respect to the data contained in the dashboard. Text, buttons, data input and data output have been tested. Details of this and an explanation of how to run the automatization test can be found in the script  *test_db2dashboard.py*. 
 
-To run the tests from the directory SQL2Dashboard/Testing write ```pipenv run python -m pytest```
+To run the tests go to  the directory SQL2Dashboard/Testing write ```pipenv run python -m pytest```
 
 The results of the tests carried out are shown below.
 
@@ -116,4 +105,15 @@ tests/test_db2dashboard.py::test_buttons PASSED
 tests/test_db2dashboard.py::test_dates PASSED
 tests/test_db2dashboard.py::test_card_values PASSED
 ======================================= **4 passed** in 28.68s =======================================
+```
+The content of this folder:
+```sh
+├── README.md                                           # Some personal reflections that are arised during and after the work of this project 
+├── Pipfile
+├── Pipfile.lock
+├── chromedriver                                        # Needed for Selenium to automatized the tests
+├──Test
+│ ├── test_db2dashboard.py                              # The code of the tests
+│ ├──  __pycache__
+│ ├── assets
 ```
