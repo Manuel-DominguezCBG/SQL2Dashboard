@@ -8,17 +8,22 @@ This work has been split into 3 main tasks/folders:
 
 1. Folder **Covid-19**. Creation of a database and an interactive dashboard.
 From datasets with Covid-19 data taken from [GOV.UK](https://coronavirus.data.gov.uk/)
-I have created a simple database. With this database, I have designed a dashboard by using [Dash](https://dash.plotly.com/)
-To allow the user to interact with the data, the design contained 2 two callbacks at the top (see picture below)
-in which you can select a period of time. After this, the dashboard shows covid-19 data in the selected period.
-More specifically what the dashboard returns in 5 cards with the number of people vaccinated,number of  people  tested positive,
-number of  death people who were tested positive, and the number of Covid patients  admitted in hospitals.
-Additionally, the dashboard shows 4 graphs. The first is a line chart and shows the number of people vaccinated per day by the 4 regions of the UK.
-In this plot, the user can select what regions  he wants to plot  and also can zoom in or out.
-Under the plot, it can be seen two buttons, one that shows the data in a table and a second that allows the user to download the data.
-The second graph is a bar chart that shows accumulative data of people vaccinated. That is, the total number of people vaccinated since the covid vaccination program began
-but only showing these data in the period of time selected by the user. The third one is a pie chart that shows the proportion of people vaccinated in the total UK population.
-The last plot is a line chart that shows the trends of  people admitted in hospitals and deaths people by covid. 
+a database has been created. With this database, a dashboard have designed using the library [Dash](https://dash.plotly.com/)
+To allow the user to interact with the data, the design contained 2 callbacks at the top (see picture below)
+in which use can select a period of time. After this, the dashboard shows covid-19 data in that selected period.
+More specifically  the dashboard returns in 5 cards:
+
+  1. The number of people vaccinated,
+  2. People tested positive,
+  3. Deaths within 28 days of positive test, 
+  4. Patients admitted.
+  
+Additionally, the dashboard shows 4 graphs:
+
+  1. A line chart showing the number of people vaccinated per day. Plot allows to filter the info by regions and do zoom in or out. Under the plot, it can be seen two buttons, one that shows the data in a table and a second that allows the user to download the data.
+  2. A bar chart that shows accumulative data of people vaccinated. That is, the total number of people vaccinated since the covid vaccination program began.
+  3. A pie chart showing the proportion of people vaccinated and non vaccinated in the total UK population
+  4. A line chart that shows the trends of  people admitted in hospitals and deaths people by covid. 
 
 ![Alt text](https://github.com/Manuel-DominguezCBG/SQL2Dashboard/blob/main/Covid-19/Images/1.png "")
 
