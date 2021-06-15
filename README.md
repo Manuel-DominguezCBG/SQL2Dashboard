@@ -4,7 +4,6 @@
 
 The dashboard is deployed [here](https://db2dashboardcovid.herokuapp.com/)
 
-https://db2dashboardcovid.herokuapp.com/
 
 ## Working with databases and dashboards
 This project aims to learn about computing in a clinical context and overcome some of the competencies of the module **Computing for Clinical Scientists**.
@@ -59,6 +58,11 @@ The content of this folder:
 ```
 
 2.  Folder **Fake_database** Regardless of what has been done previously, a fake data database has been created contained 4 linked tables.
+
+
+To visualised the dashboard click [here](https://fakecoviddb.herokuapp.com/) 
+
+
 
 The structure of the database looks like this: 
 

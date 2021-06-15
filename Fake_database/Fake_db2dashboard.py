@@ -89,6 +89,7 @@ def from_dob_to_age(born):
 
 # Bootstrap themes by Ann: https://hellodash.pythonanywhere.com/theme_explorer
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.JOURNAL])
+server = app.server # To plot in heroku
 
 app.layout = dbc.Container([
     dbc.Row([                                                                  
