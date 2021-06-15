@@ -2,6 +2,10 @@
 # SQL2Dashboard
 ****
 
+The dashboard is deployed [here](https://db2dashboardcovid.herokuapp.com/)
+
+https://db2dashboardcovid.herokuapp.com/
+
 ## Working with databases and dashboards
 This project aims to learn about computing in a clinical context and overcome some of the competencies of the module **Computing for Clinical Scientists**.
 This work has been split into 3 main tasks/folders:

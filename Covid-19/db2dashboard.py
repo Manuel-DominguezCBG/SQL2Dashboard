@@ -54,6 +54,7 @@ example2show = People_vaccinated[['date','newPeopleVaccinatedFirstDoseByPublishD
 
 # Style sheets taken from external sources: https://dash-bootstrap-components.opensource.faculty.ai/docs/themes/
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SKETCHY])
+server = app.server # To plot in heroku
 
 app.layout = dbc.Container([
     dbc.Row([                                                                  
